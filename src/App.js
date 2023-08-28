@@ -1,32 +1,20 @@
 import { NavLink, Route, Routes} from 'react-router-dom';
 import './App.css';
 import { TodoWrapper } from './components/TodoWrapper';
-
-const checkActiveLink = (isActive) => (isActive ? 'active' :'');
+import { Navbar } from './pages/Navbar';
+import './index.css'
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.16/browser.js"></script>
 
 export default function App() {
   return (
     <>
-    <div className="App"><TodoWrapper/></div>
-    
-    {/* <div>
-      <NavLink  className = {({isActive}) => checkActiveLink(isActive)}
-        to ="/about"
-      >
-        about
-      </NavLink>
-      <NavLink  className = {({isActive}) => checkActiveLink(isActive)}
-        to ="/
-        
-        "
-      >
-        main
-      </NavLink>
-    </div>
-    <Routes>
-      <Route path="/main" element={<TodoWrapper/>}></Route>
-      <Route path="/about" element={<div className="App"><TodoWrapper/></div>}></Route>
-    </Routes> */}
+    <Navbar className="nav"/>
+     
+      <Routes>
+        <Route path="/about" element={ <div className="TodoWrapper">This to do list was developed with the help of me and youtube</div>
+        }/>
+        <Route path="/" element={<div className="App"><TodoWrapper/></div>}/>
+      </Routes>
     </>
   );
 }
